@@ -273,7 +273,7 @@ Para probarlo hemos creado tres clientes, triplicando el código, pero cambiando
 const gameId = '123'; // esto será dinámico desde tu app
 const userName1 = 'Jugador1';
 
-// === Parámetros del juego ===
+// === Parámetros del juego. El cliente 2 está configurado para ser lanzado con Vite ===
 const gameId = '123'; // esto será dinámico desde tu app
 const userName1 = 'Jugador2';
 
@@ -299,7 +299,7 @@ php -S 127.0.0.1:9091
 ```
 
 ```bash
-php -S 127.0.0.1:9092
+npm run dev
 ```
 
 ```bash
