@@ -98,10 +98,21 @@ class ChatController extends Controller
 }
 ```
 
-### **Paso 3 – Crear la ruta**
+### **Paso 3 – Crear las rutas**
 
 ```jsx
 Route::post('/api/chat/send-private', [ChatController::class, 'sendPrivate']);
+```
+Y en route/channels:
+
+```php
+Broadcast::channel('game.{gameId}', function ($user = null, $gameId) {
+    // Validar si el usuario pertenece a esa partida
+    //return $user->games->contains('id', (int) $gameId);
+    // Esto supone que tienes una relación User -> games(), pero si no, puedes poner algo simple para test:
+    return true; // permitir a todos temporalmente
+});
+
 ```
 
 Nota: Usamos `/api/chat/send-private` como endpoint para enviar mensajes desde los clientes a Laravel.
