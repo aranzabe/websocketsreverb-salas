@@ -101,7 +101,7 @@ class ChatController extends Controller
 ### **Paso 3 – Crear las rutas**
 
 ```jsx
-Route::post('/api/chat/send-private', [ChatController::class, 'sendPrivate']);
+Route::post('/chat/send-private', [ChatController::class, 'sendPrivate']);
 ```
 Y en route/channels:
 
