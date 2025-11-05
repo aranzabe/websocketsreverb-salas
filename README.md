@@ -292,7 +292,35 @@ php artisan serve
 php artisan reverb:start
 ```
 
-Y en otras tres terminales:
+Y en otras tres terminales levantamos los clientes. El primero es un aplicación sencilla con JS, el segundo usa Vite y el tercero es TS.
+
+Para el segundo la configuración de vite-config.js es:
+```javascript
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+  server: {
+    host: '127.0.0.1',
+    port: 9092, 
+    cors: true,
+  },
+});
+```
+
+Y en el tercero, vite-config.ts:
+```typescript
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+  server: {
+    host: '127.0.0.1',
+    port: 9093,
+    cors: true,
+  },
+});
+```
+
+Los comandos para levantar los tres clientes serán:
 
 ```bash
 php -S 127.0.0.1:9091
@@ -303,7 +331,7 @@ npm run dev
 ```
 
 ```bash
-php -S 127.0.0.1:9093
+npm run dev
 ```
 
 Para cada cliente.
